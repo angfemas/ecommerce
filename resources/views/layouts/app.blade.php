@@ -103,6 +103,8 @@
             {{ $slot }}
         </main>
     </div>
+    <!-- Page Content end -->
+     
 
     <!-- Smooth Scroll dan Animasi -->
     <script>
