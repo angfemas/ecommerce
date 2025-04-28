@@ -81,6 +81,11 @@
         bottom: 0;
         transform: rotate(-45deg);
     }
+
+    body {
+        margin: auto;
+        margin-top: 4%;
+    }
     </style>
 </head>
 
@@ -88,10 +93,9 @@
     <div class="min-h-screen bg-gray-100">
         @include('layouts.navigation')
 
-
         <!-- Page Heading -->
         @if (isset($header))
-        <header class="bg-light ">
+        <header class="bg-light">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
@@ -100,11 +104,10 @@
 
         <!-- Page Content -->
         <main>
-            {{ $slot }}
+            @yield('content')
         </main>
     </div>
     <!-- Page Content end -->
-     
 
     <!-- Smooth Scroll dan Animasi -->
     <script>

@@ -11,6 +11,20 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+
+    public function index(): \Illuminate\View\View
+    {
+        $user = Auth::user();
+        return view('profile.index', compact('user'));
+    }
+    
+
+    public function orders()
+{
+    $orders = Auth::user()->orders()->with('orderItems')->latest()->get();
+    return view('profile.orders', compact('orders'));
+}
+
     /**
      * Display the user's profile form.
      */
